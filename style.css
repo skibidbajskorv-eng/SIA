@@ -1,24 +1,334 @@
 
-/* ===================================== */
-/* S.I.A - CLASSIFIED TV STATIC EFFECT   */
-/* ===================================== */
+/* ==========================================
+   S.I.A - SPECIAL INTELLIGENCE AGENCY
+   OFFICIAL WEBSITE STYLESHEET
+   ========================================== */
 
-/* Black background */
+/* 01 - GENERAL DESIGN */
+
+:root {
+  color-scheme: dark;
+  --background: #050505;
+  --surface: #101010;
+  --text: #ffffff;
+  --muted: #aaaaaa;
+  --border: #444444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html {
-  background-color: #000;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #000;
-  position: relative;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
   isolation: isolate;
 }
 
-/* Animated TV noise */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+/* 02 - NAVIGATION */
+
+.topbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 20px 5%;
+  border-bottom: 1px solid var(--border);
+  background: #080808;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.brand-mark {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.brand-sub {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+nav a {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.5;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* 03 - HOMEPAGE */
+
+.hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+.dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 10px;
+  background: white;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/* OFFICIAL S.I.A LOGO */
+
+.agency-logo {
+  display: block;
+  width: 320px;
+  max-width: 80vw;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 35px;
+}
+
+/* Main title */
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 76px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 5px;
+  margin-bottom: 25px;
+}
+
+.hero-text {
+  color: #cccccc;
+  font-size: 15px;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 25px;
+  border: 1px solid white;
+  background: white;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.primary-button:hover {
+  background: transparent;
+  color: white;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 50px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* 04 - CONTENT SECTIONS */
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px 25px;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-number {
+  color: var(--muted);
+  font-family: monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.section h2 {
+  margin: 15px 0;
+  font-size: clamp(28px, 4vw, 46px);
+  letter-spacing: 2px;
+}
+
+.section p {
+  color: #cccccc;
+}
+
+.intro > p {
+  max-width: 750px;
+  font-size: 18px;
+}
+
+/* 05 - REPORTS AND DATABASE */
+
+.card-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+}
+
+.card,
+.report-card,
+.organization-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 25px;
+  transition: border-color 0.2s;
+}
+
+.card:hover,
+.report-card:hover,
+.organization-card:hover {
+  border-color: white;
+}
+
+.card h3,
+.report-card h3,
+.organization-card h3 {
+  color: white;
+  margin-bottom: 12px;
+}
+
+.card p,
+.report-card p,
+.organization-card p {
+  color: var(--muted);
+}
+
+/* 06 - NEWS AND OPERATIONS */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stack > * {
+  padding: 25px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+/* 07 - FOOTER */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 35px 5%;
+  background: #080808;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer strong {
+  color: white;
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+/* 08 - REPORT DETAILS WINDOW */
+
+#details-dialog {
+  width: min(90vw, 800px);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 35px;
+  background: #101010;
+  color: white;
+  border: 1px solid white;
+}
+
+#details-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.close-dialog {
+  float: right;
+  background: transparent;
+  color: white;
+  border: 1px solid #555;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* 09 - ANIMATED TV STATIC */
+
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -5%;
 
   z-index: 1000;
   pointer-events: none;
@@ -32,7 +342,6 @@ body::before {
   animation: sia-noise 0.18s steps(3) infinite;
 }
 
-/* Horizontal CRT scanlines */
 body::after {
   content: "";
   position: fixed;
@@ -47,36 +356,72 @@ body::after {
     transparent 3px,
     rgba(255, 255, 255, 0.035) 4px
   );
-
-  opacity: 0.5;
 }
 
-/* Noise movement */
 @keyframes sia-noise {
-  0% {
-    transform: translate(0, 0);
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-2%, 1%); }
+  50%  { transform: translate(2%, -2%); }
+  75%  { transform: translate(-1%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* 10 - MOBILE DESIGN */
+
+@media (max-width: 768px) {
+
+  .topbar {
+    flex-wrap: wrap;
   }
 
-  25% {
-    transform: translate(-2%, 1%);
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
   }
 
-  50% {
-    transform: translate(2%, -2%);
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
   }
 
-  75% {
-    transform: translate(-1%, 2%);
+  nav.open {
+    display: flex;
   }
 
-  100% {
-    transform: translate(0, 0);
+  .agency-logo {
+    width: 240px;
+  }
+
+  .hero {
+    min-height: 75vh;
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    letter-spacing: 2px;
+  }
+
+  .section {
+    padding: 65px 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
-/* Respect reduced motion settings */
+/* 11 - ACCESSIBILITY */
+
 @media (prefers-reduced-motion: reduce) {
   body::before {
     animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
