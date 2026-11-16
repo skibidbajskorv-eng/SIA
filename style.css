@@ -425,3 +425,105 @@ body::after {
     scroll-behavior: auto;
   }
 }
+
+
+
+/* =========================================
+   S.I.A - CLASSIFIED ACCESS BUTTONS
+   ========================================= */
+
+.card button,
+.report-card button,
+.organization-card button,
+.card a,
+.report-card a,
+.organization-card a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  min-height: 45px;
+  padding: 12px 18px;
+  margin-top: 18px;
+
+  background: #080808;
+  color: #ffffff;
+  border: 1px solid #777;
+
+  /* Cut corners */
+  clip-path: polygon(
+    0 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% 100%,
+    12px 100%,
+    0 calc(100% - 12px)
+  );
+
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+/* Arrow icon */
+.card button::after,
+.report-card button::after,
+.organization-card button::after,
+.card a::after,
+.report-card a::after,
+.organization-card a::after {
+  content: "↗";
+  font-size: 17px;
+  font-weight: normal;
+}
+
+/* Hover effect */
+.card button:hover,
+.report-card button:hover,
+.organization-card button:hover,
+.card a:hover,
+.report-card a:hover,
+.organization-card a:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+/* Keyboard focus */
+.card button:focus-visible,
+.report-card button:focus-visible,
+.organization-card button:focus-visible,
+.card a:focus-visible,
+.report-card a:focus-visible,
+.organization-card a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+/* Small glitch movement */
+@media (prefers-reduced-motion: no-preference) {
+  .card button:hover,
+  .report-card button:hover,
+  .organization-card button:hover {
+    animation: sia-button-glitch 0.25s steps(2);
+  }
+}
+
+@keyframes sia-button-glitch {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(2px, -1px); }
+  50%  { transform: translate(-2px, 1px); }
+  75%  { transform: translate(1px, 0); }
+  100% { transform: translate(0, -2px); }
+}
