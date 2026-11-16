@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Special Intelligence Agency — Roblox group intelligence archive." />
+  <title>S.I.A | Special Intelligence Agency</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark">S.I.A</span><span class="brand-sub">SPECIAL INTELLIGENCE AGENCY</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="nav" aria-label="Main navigation">
+      <a href="#home">HOME</a><a href="#reports">REPORTS</a><a href="#database">DATABASE</a><a href="#news">NEWS</a><a href="#operations">OPERATIONS</a>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="hero">
+      <div class="eyebrow">ROBLOX INTELLIGENCE ARCHIVE <span class="dot"></span> PUBLIC ACCESS</div>
+      <img class="agency-logo" src="sia-logo.png" alt="Special Intelligence Agency official eagle emblem, established 2022" />
+      <h1>SPECIAL<br>INTELLIGENCE<br>AGENCY</h1>
+      <p class="hero-text">Information. Analysis. Awareness.<br>An independent intelligence-themed Roblox group archive.</p>
+      <a class="primary-button" href="#reports">EXPLORE INTELLIGENCE REPORTS <span>↗</span></a>
+      <div class="hero-meta"><span>ARCHIVE STATUS: ACTIVE</span><span>DOCUMENT ACCESS: PUBLIC</span><span>EST. 2022</span></div>
+    </section>
+    <section class="section intro"><div class="section-heading"><span class="section-number">01 / OVERVIEW</span><h2>THE AGENCY</h2></div><p>S.I.A documents publicly observable Roblox group activity, publishes in-game intelligence reports, and maintains an organized archive of missions and agency announcements. All entries concern Roblox gameplay and group activity—not players' private lives.</p></section>
+    <section id="reports" class="section"><div class="section-heading"><span class="section-number">02 / ARCHIVE</span><h2>INTELLIGENCE REPORTS</h2><p>Browse public reports and archived findings.</p></div><div id="report-list" class="card-grid"></div></section>
+    <section id="database" class="section"><div class="section-heading"><span class="section-number">03 / DIRECTORY</span><h2>ORGANIZATION DATABASE</h2><p>Profiles of Roblox groups tracked by the agency.</p></div><div id="organization-list" class="card-grid"></div></section>
+    <section id="news" class="section"><div class="section-heading"><span class="section-number">04 / BULLETINS</span><h2>AGENCY NEWS</h2></div><div id="news-list" class="stack"></div></section>
+    <section id="operations" class="section"><div class="section-heading"><span class="section-number">05 / ACTIVITY</span><h2>OPERATIONS</h2><p>Public summaries of S.I.A Roblox missions.</p></div><div id="operation-list" class="stack"></div></section>
+  </main>
+  <footer><strong>S.I.A</strong><span>Special Intelligence Agency · Unofficial Roblox fan group website. Not affiliated with Roblox Corporation.</span><span>© <span id="year"></span> S.I.A</span></footer>
+  <dialog id="details-dialog" aria-labelledby="dialog-title"><button id="close-dialog" class="close-dialog" aria-label="Close">✕</button><div id="dialog-content"></div></dialog>
+  <script src="data.js"></script><script src="script.js"></script>
+</body>
+</html>
